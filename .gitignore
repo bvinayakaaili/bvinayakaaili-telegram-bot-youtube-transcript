@@ -15,7 +15,7 @@ backend/*.pyd
 backend/youtube_bot.db
 backend/faiss_indexes/
 backend/cookies.txt
-photos/
+
 
 # node frontend
 frontend/node_modules/
