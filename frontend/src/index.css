@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0A0C0F;
+    color: #E5E7EB;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111318;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #262C38;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(25, 29, 36, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .card {
+    @apply bg-surface-2 border border-surface-4 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-bright text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply bg-surface-3 hover:bg-surface-4 text-soft hover:text-text font-medium px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2;
+  }
+
+  .input {
+    @apply bg-surface-3 border border-surface-4 text-text placeholder:text-muted rounded-xl px-4 py-3 w-full focus:outline-none focus:border-accent/60 transition-colors duration-200;
+  }
+
+  .stat-card {
+    @apply card p-5 flex flex-col gap-2 hover:border-accent/30 transition-colors duration-300;
+  }
+
+  .badge {
+    @apply text-xs font-mono px-2 py-0.5 rounded-md;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #191D24 25%, #1F242D 50%, #191D24 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .page-enter {
+    animation: fadeIn 0.4s ease forwards, slideUp 0.4s ease forwards;
+  }
+}
